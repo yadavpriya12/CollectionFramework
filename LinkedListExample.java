@@ -1,86 +1,92 @@
-
-package com.mycompany.collectionframework;
-
+import java.util.Collections;
 import java.util.LinkedList;
-
+import java.util.List;
 
 public class LinkedListExample {
-    
     public static void main(String[] args) {
-        LinkedList<Integer> list = new LinkedList<>();
-        list.add(10);
-        list.add(20);
-        list.add(30);
-        list.add(40);
-        list.add(50);
-        list.add(60);
-        list.add(70);
-      for(Integer integer : list){
-          System.out.println(integer);
-      }
-      
-      
-        System.out.println("=======AddIndex======");
-        list.add(2, 25);
-        for(Integer integer : list){
-            System.out.println(integer);
-        }
-        
-     //   System.out.println("=========AddAll==========");
-       //list<Integer> newlist = new LinkedList<>();
-       
-       System.out.println("========RemoveFirst=========");
-        System.out.println(list.remove(0));
-       
-        System.out.println("============RemoveIndex===========");
-        System.out.println(list.remove(3));
-       
-        System.out.println("============Clone============");
-        System.out.println(list.clone());
-        
-        System.out.println("=======Contains======");
-        System.out.println(list.contains(30));
-        
-        System.out.println("=======getFirst======");
-        System.out.println(list.getFirst());
-        
-        System.out.println("=======getIndex======");
-        System.out.println(list.get(3));
-        
-        System.out.println("=========getLast=========");
-        System.out.println(list.getLast());
-        
-        System.out.println("=======inddexof========");
-        System.out.println(list.indexOf(60));
-       
-        System.out.println("=====is empty====");
-        System.out.println(list.isEmpty());
-        
-        System.out.println("===peek==");
-        System.out.println(list.peek());
-       
-        System.out.println("======peekfirst======");
-        System.out.println(list.peekFirst()); 
-        
-        System.out.println("=====peekLast=====");
-        System.out.println(list.peekLast());
-        
-        System.out.println("======poll=====");
-        System.out.println(list.poll());
-        
-        System.out.println("=====pollFirst=====");
-        System.out.println(list.pollFirst());
+       LinkedList<String> L1 = new LinkedList<>();
+       L1.add("java");
+       L1.add("C++");
+       L1.add("Html");
+       L1.add("css");
+       L1.add("python");
+       System.out.println(L1);
+
+       LinkedList<String> L2 = new LinkedList<>();
+       L2.add("C++");
+       L2.add("Html");
+       L2.add("css");
+       L2.add("python");
+
+       System.out.println(L2);
+
+       System.out.println("===AddFirst====");
+       L1.addFirst("c");
+        System.out.println(L1);
+
+
+        System.out.println("=====AddIndex=====");
+        L1.add(2, "Hello");
+        System.out.println(L1);
+
+       System.out.println("====AddLast====");
+       L1.addLast("Priya");
+       System.out.println(L1);
+
+        System.out.println("===getfirst======");
+        System.out.println(L1.getFirst());
+
+
+        System.out.println("=====getIndex====");
+        System.out.println(L1.get(3));
+
+
+       System.out.println("====getlast=====");
+       System.out.println(L1.getLast());
+
+          System.out.println("=====equal====");
+          System.out.println(L1.equals(L2));
+
+          System.out.println("====clone===");
+          System.out.println(L1.clone());
+
           
-        System.out.println("======PollLast======");
-        System.out.println(list.pollLast());
-    
-        System.out.println("=====pop====");
-        System.out.println(list.pop());
-   
-        
-        System.out.println("=====Clear=====");
-        list.clear();
-        
-    
-    }
+          Collections.unmodifiableList(L1);
+          L1.add("hii");
+          L1.set(3, "pihu");
+          System.out.println(L1);
+
+          System.out.println("======Contains======");
+          System.out.println(L1.contains("pihu"));
+          
+          System.out.println("========containsAll=======");
+          System.out.println(L1.containsAll(L2));
+
+          System.out.println("=======Set======");
+          L1.set(2, "Kanita");
+          System.out.println(L1);
+           
+             System.out.println("-=====Element=======");
+             System.out.println(L1.element());
+
+          System.out.println("======getclass========");
+          System.out.println(L1.getClass());
+          
+          System.out.println("=====IndexOf======");
+          System.out.println(L1.indexOf("pihu"));
+
+          System.out.println("======IsEmpty=========");
+          System.out.println(L1.isEmpty());
+
+
+          System.out.println("=======offer========");
+          System.out.println(L1.offer("sonali"));
+          System.out.println(L1);
+
+          System.out.println("=====unmodifidiableList=====");
+         List<String> list = Collections.unmodifiableList(L1);
+        //list.add("sonali");
+         System.out.println(list);
+
+           }
 }
